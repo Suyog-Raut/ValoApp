@@ -1,0 +1,25 @@
+.leadercard {
+    width: 50%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    background-color: rgb(235, 253, 255);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .rank {
+      padding-right: 1rem;
+      text-decoration: underline;
+  }
+
+  .vertical {
+      margin: 0 .5rem;
+      width: 2px;
+      height: 1.5rem !important;
+      border: 2px  #f8374b ;
+      border-style: double;
+      border-radius: 3px;
+  }

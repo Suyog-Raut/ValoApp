@@ -1,0 +1,228 @@
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+      background-color: rgb(13, 13, 15);
+   border: 3px;
+   border-color: #fd4556;
+font-family: 'Orbitron',sans-serif;
+}
+/* #1c252e */
+h1 {
+  margin: 0 0 2rem 0;
+}
+
+h2 {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.parallelogram {
+  padding: 1rem;
+  text-align: left;
+     transform: skew(20deg);
+     background: #fd4556;
+     width: fit-content;
+   }
+
+
+.border1 {
+    animation: glitch 1s linear infinite;
+  font-size: 70px;
+  font-weight: bolder;
+  padding-right: 3rem;
+  margin-bottom: 3rem;
+  text-align: right;
+  border-width:0 3px 0 0;
+  border-style: double;
+  border-color: #fd4556 ;
+  width: fit-content;
+}
+
+.head h3 {
+width:50%;
+}
+
+.border2 {
+  color: #fd4556 !important ;
+  border-width:0 0 3px 0;
+  border-style: double;
+  border-color: #fd4556 ;
+}
+
+.border3 {
+  border-width:3px 0 3px 0 ;
+  border-style: double;
+  border-color: #fd4556 ;
+}
+
+.adjust {
+  position: relative;
+ top:-20px;
+ left:10px;
+}
+
+img {
+  margin: .5rem;
+}
+
+.bg-night {
+  margin: 5rem 8rem;
+  background-color: transparent;
+  color: #f4f4f2 ;
+}
+
+.head {
+padding: 3rem 0;
+}
+
+.bg-dark {
+background-color: rgb(13, 13, 15) !important;
+}
+
+.nav-link {
+ padding: 0.5rem 1rem  !important;
+}
+
+.nav-link:hover {
+  color: #fd4556 !important;
+}
+
+.zoom {
+  margin-top: 3rem;
+  width:50%;
+  transition: transform .5s;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+.center {
+  text-align: center;
+}
+
+.gamediv {
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+.outline-text {
+  color : transparent;
+  font-size: 50px;
+  font-weight:bolder;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: white;
+}
+
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg);
+  }
+}
+
+.border1:before,
+.border1:after{
+  content: attr(title);
+  position: absolute;
+  right: 3rem ;
+}
+
+.border1:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg);
+  }
+}
+
+.border1:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bg-night {
+    margin: 5rem 1.5rem;
+  }
+  .border1 {
+    margin-right: 0;
+    text-align: center;
+    padding-right: 1rem;
+  }
+  .head {
+    text-align: center;
+  }
+  .head h2 {
+    width: 100%;
+  }
+  .border1:before,
+  .border1:after{
+  right: 1rem;
+}
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  margin: 2rem;
+}
+
+select {
+  margin: 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 8px 8px;
+}
+
+select:focus {
+  outline: none;
+}
+
+input {
+  border-style: solid;
+  padding: 0.3rem 1rem;
+  margin: 1rem;
+  border-radius: 8px 8px;
+}
+
+input:focus {
+outline: none;
+}
+
+Button {
+  margin: 1rem;
+}
+

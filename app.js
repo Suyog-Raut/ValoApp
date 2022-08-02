@@ -76,18 +76,28 @@ const fetchData2 = async () => {
 fetchData();
 fetchData1();
 fetchData2();
-app.get("/agents", function (req, res) {
+app.get("/api/agents", function (req, res) {
   res.send(agent);
 });
 
-app.get("/gamemodes", function (req, res) {
+app.get("/api/gamemodes", function (req, res) {
   res.send(gamemode);
 });
-app.get("/maps", function (req, res) {
+app.get("/api/maps", function (req, res) {
   res.send(map);
 });
 
 const port = process.env.PORT || 3001;
+
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.NODE_ENV === "staging"
+) {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
+}
 
 app.listen(port, () => {
   console.log("Server is running on port:", port);
